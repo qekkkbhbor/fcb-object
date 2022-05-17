@@ -58,7 +58,7 @@ public class Repository {
 		//PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
 		//pstmt.setString(1,"1"); 
 		//ResultSet resultSet = pstmt.executeQuery();
-		
+		//123
 		
 		System.out.println(sqlCmd);
 		ResultSet resultSet = stmt.executeQuery(sqlCmd);
