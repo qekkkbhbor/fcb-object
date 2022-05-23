@@ -43,6 +43,7 @@ public class MusicApp {
 		 System.out.println(repository.getBycode("A01"));
 		 repository.delete("A02");
 		 System.out.println(repository.getBycode("A02"));
+		 
 		 System.out.println(repository.getBycode());
 	}
 }

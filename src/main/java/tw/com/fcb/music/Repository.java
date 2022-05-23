@@ -90,8 +90,7 @@ public class Repository {
 		PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
 		pstmt.setString(1,"C01"); 
 		ResultSet resultSet = pstmt.executeQuery();
-		
-		
+			
 		System.out.println(sqlCmd);
         Music music = new Music();
         while(resultSet.next()) {
