@@ -58,7 +58,7 @@ public class Repository {
 		//PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
 		//pstmt.setString(1,"1"); 
 		//ResultSet resultSet = pstmt.executeQuery();
-		//123456
+		
 		
 		System.out.println(sqlCmd);
 		ResultSet resultSet = stmt.executeQuery(sqlCmd);
@@ -81,5 +81,26 @@ public class Repository {
 		System.out.println(sqlCmd);
 		stmt.executeUpdate(sqlCmd);
         return -1;
+	}
+	
+	
+	public Music getBycode() throws SQLException{		
+		Connection conn = this.getConnection();		
+		String sqlCmd = "select * from  album  where code = ?";
+		PreparedStatement pstmt = conn.prepareStatement(sqlCmd);
+		pstmt.setString(1,"C01"); 
+		ResultSet resultSet = pstmt.executeQuery();
+		
+		
+		System.out.println(sqlCmd);
+        Music music = new Music();
+        while(resultSet.next()) {
+        	music.setCode(resultSet.getString("code"));
+        	music.setName(resultSet.getString("name"));
+        	music.setSingerName(resultSet.getString("singerName"));
+        	music.setPrice(resultSet.getInt("price"));
+        }
+        
+        return music;
 	}
 }
